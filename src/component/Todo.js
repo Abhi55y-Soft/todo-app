@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import DisplayItem from './DisplayItem';
-import InputFeild from './InputFeild';
+import InputField from './InputField';
 
 const Todo = () => {
   const [inputData, setInputData] = useState('');
@@ -57,7 +57,7 @@ const Todo = () => {
         <>
           <div className="main-div">
               <div className="child-div">
-                < InputFeild inputData={inputData} setInputData={setInputData} addItem={addItem} toggleEdit={toggleEdit} />
+                < InputField inputData={inputData} setInputData={setInputData} addItem={addItem} toggleEdit={toggleEdit} />
                 < DisplayItem items={items} editItem={editItem} deleteItem={deleteItem} removeAll={removeAll} />
               </div>
           </div>  
