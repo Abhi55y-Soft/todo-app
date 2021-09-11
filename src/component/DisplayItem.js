@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { itemContext } from './Todo';
 
-const DisplayItem = ({items, editItem, deleteItem, removeAll}) => {
+const DisplayItem = () => {
+    const {items, editItem, deleteItem, removeAll} = useContext(itemContext);
     return (
         <>
             <div>

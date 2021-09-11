@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { createContext, useState } from 'react';
 import DisplayItem from './DisplayItem';
 import InputField from './InputField';
 
+export const itemContext = createContext();
 const Todo = () => {
   const [inputData, setInputData] = useState('');
   const [items, setItems] = useState([]);
@@ -54,14 +55,14 @@ const Todo = () => {
     setItems([]);
   }
     return (
-        <>
+        <itemContext.Provider value={{inputData, setInputData, items, addItem, toggleEdit, editItem, deleteItem,removeAll}}>
           <div className="main-div">
               <div className="child-div">
-                < InputField inputData={inputData} setInputData={setInputData} addItem={addItem} toggleEdit={toggleEdit} />
-                < DisplayItem items={items} editItem={editItem} deleteItem={deleteItem} removeAll={removeAll} />
+                < InputField />
+                < DisplayItem />
               </div>
           </div>  
-        </>
+        </itemContext.Provider>
     )
 }
 

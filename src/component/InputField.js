@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import todo from './todo.jpg';
+import { itemContext } from './Todo';
 
-const InputFeild = ({setInputData, inputData, toggleEdit, addItem}) => {
+const InputFeild = () => {
+    const {inputData, setInputData, addItem, toggleEdit} = useContext(itemContext);
     return (
         <>
             <figure>
